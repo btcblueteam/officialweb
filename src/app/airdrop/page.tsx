@@ -212,7 +212,7 @@ export default function AirdropDashboard() {
           <ArrowLeft size={16} /> Back to Home
         </Link>
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Genesis Airdrop</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Genesis Airdrop</h1>
           <p className="text-[#9ca3af] text-lg max-w-2xl">
             Complete the steps below to secure your $BTCBLUE fraction. The reward halves as more users join!
           </p>
@@ -366,8 +366,8 @@ export default function AirdropDashboard() {
                       <span className={`font-bold ${step > 2 ? 'text-[#00d2ff]' : 'text-white'}`}>Email Address</span>
                     </div>
                     {step === 2 && (
-                      <div className="flex items-center gap-2">
-                        <input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white outline-none focus:border-[#00d2ff] text-sm" />
+                      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full">
+                        <input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white outline-none focus:border-[#00d2ff] text-sm w-full" />
                         <button onClick={handleSendOTP} disabled={isLoading} className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm font-bold text-white transition-colors disabled:opacity-50 flex items-center gap-2">
                           <Mail size={16} /> Send OTP
                         </button>
@@ -388,8 +388,8 @@ export default function AirdropDashboard() {
                     </div>
                     {step === 3 && (
                       <div className="flex flex-col items-end gap-2">
-                        <div className="flex items-center gap-2">
-                          <input type="text" placeholder="6-digit code" maxLength={6} value={otp} onChange={e => setOtp(e.target.value)} className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white outline-none focus:border-[#00d2ff] text-sm font-mono" />
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full">
+                          <input type="text" placeholder="6-digit code" maxLength={6} value={otp} onChange={e => setOtp(e.target.value)} className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white outline-none focus:border-[#00d2ff] text-sm font-mono w-full" />
                           <button onClick={() => { if(otp.length === 6) setStep(4); else setErrorMsg("Enter 6 digits"); }} className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm font-bold text-white transition-colors">
                             Verify
                           </button>

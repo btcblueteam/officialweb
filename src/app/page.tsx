@@ -142,7 +142,7 @@ export default function Home() {
             Version: 1.0.0
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white font-[var(--font-space)]">
+          <motion.h1 variants={fadeUp} className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white font-[var(--font-space)]">
             Automating the <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-[#00A3FF] to-[#00E5FF]">
               Web3 Future
@@ -165,7 +165,7 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="flex-1 relative w-full max-w-lg mx-auto flex items-center justify-center aspect-square">
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="flex-1 relative w-full max-w-xs sm:max-w-sm lg:max-w-lg mx-auto flex items-center justify-center aspect-square">
           <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF]/20 to-[#00E5FF]/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="relative w-64 h-64 border-[0.5px] border-[#0066FF]/30 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
             <div className="absolute w-full h-full border-[0.5px] border-[#00E5FF]/20 rounded-full rotate-45 scale-110"></div>
@@ -212,7 +212,7 @@ export default function Home() {
             <h2 className="text-3xl lg:text-5xl font-bold text-white font-[var(--font-space)] mb-4">The Economic Engine</h2>
             <div className="flex flex-col items-center gap-2 mt-6">
               <span className="text-[#8A93A6] text-sm uppercase tracking-widest font-semibold">Total Supply</span>
-              <span className="text-4xl lg:text-6xl font-mono font-bold text-[#00E5FF] tracking-tight drop-shadow-[0_0_15px_rgba(0,229,255,0.3)]">2,100,000</span>
+              <span className="text-3xl sm:text-4xl lg:text-6xl font-mono font-bold text-[#00E5FF] tracking-tight drop-shadow-[0_0_15px_rgba(0,229,255,0.3)]">2,100,000</span>
             </div>
           </motion.div>
 

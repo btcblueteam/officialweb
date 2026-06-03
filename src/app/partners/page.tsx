@@ -73,13 +73,13 @@ export default function PartnersPage() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           
           {/* Left Column: Info & Benefits */}
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col gap-6 sticky top-32">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-col gap-6 lg:sticky lg:top-32">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#00E5FF]/10 border border-[#00E5FF]/20 text-[#00E5FF] text-xs font-bold uppercase tracking-widest w-max">
               <Network size={14} />
               Ambassador Program
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-[var(--font-space)] leading-[1.1] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-[var(--font-space)] leading-[1.1] tracking-tight">
               Strategic <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00E5FF]">KOL Partnerships</span>
             </h1>
