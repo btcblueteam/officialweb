@@ -44,7 +44,7 @@ export default function Home() {
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#070A11]/80 backdrop-blur-xl border-b border-white/[0.05]' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer group">
-            <img src="/logo.png" alt="Bitcoin Blue Logo" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300" />
+            <img src="/logo.webp" alt="Bitcoin Blue Logo" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300" />
             <span className="text-xl font-bold tracking-wider text-white font-[var(--font-space)]">
               BTC<span className="text-[#0066FF] ml-1">Blue</span>
             </span>
@@ -171,7 +171,7 @@ export default function Home() {
             <div className="absolute w-full h-full border-[0.5px] border-[#00E5FF]/20 rounded-full rotate-45 scale-110"></div>
             <div className="absolute w-full h-full border-[0.5px] border-[#0066FF]/40 rounded-full -rotate-45 scale-90"></div>
           </div>
-          <img src="/logo.png" alt="Bitcoin Blue Logo" className="absolute w-28 h-28 object-contain drop-shadow-[0_0_25px_rgba(0,229,255,0.4)] animate-pulse" />
+          <img src="/logo.webp" alt="Bitcoin Blue Logo" className="absolute w-28 h-28 object-contain drop-shadow-[0_0_25px_rgba(0,229,255,0.4)] animate-pulse" />
         </motion.div>
       </section>
 
@@ -334,7 +334,7 @@ export default function Home() {
       <footer className="relative pt-16 pb-8 max-w-7xl mx-auto px-6 lg:px-8 border-t border-white/[0.05]">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Bitcoin Blue Logo" className="w-8 h-8 object-contain" />
+            <img src="/logo.webp" alt="Bitcoin Blue Logo" className="w-8 h-8 object-contain" />
             <span className="text-xl font-bold tracking-wider text-white font-[var(--font-space)]">BTC<span className="text-[#0066FF]">Blue</span></span>
           </div>
           <div className="flex gap-6">
