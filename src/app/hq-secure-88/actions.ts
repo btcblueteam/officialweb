@@ -11,7 +11,7 @@ const supabaseAdmin = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export async function updatePresaleStatus(wallet: string, status: 'pending' | 'approved' | 'rejected') {
+export async function updatePresaleStatus(wallet: string, status: 'pending' | 'approved' | 'rejected'): Promise<void> {
   const { error } = await supabaseAdmin
     .from('presale_whitelist')
     .update({ status })
@@ -19,14 +19,12 @@ export async function updatePresaleStatus(wallet: string, status: 'pending' | 'a
 
   if (error) {
     console.error('Failed to update presale status:', error);
-    return { success: false, error: error.message };
   }
 
   revalidatePath('/hq-secure-88/presale');
-  return { success: true };
 }
 
-export async function updateKolStatus(id: number, status: 'pending' | 'approved' | 'rejected') {
+export async function updateKolStatus(id: number, status: 'pending' | 'approved' | 'rejected'): Promise<void> {
   const { error } = await supabaseAdmin
     .from('kol_applications')
     .update({ status })
@@ -34,14 +32,12 @@ export async function updateKolStatus(id: number, status: 'pending' | 'approved'
 
   if (error) {
     console.error('Failed to update KOL status:', error);
-    return { success: false, error: error.message };
   }
 
   revalidatePath('/hq-secure-88/kol');
-  return { success: true };
 }
 
-export async function deleteAirdropClaim(wallet: string) {
+export async function deleteAirdropClaim(wallet: string): Promise<void> {
   const { error } = await supabaseAdmin
     .from('airdrop_claims')
     .delete()
@@ -49,14 +45,12 @@ export async function deleteAirdropClaim(wallet: string) {
 
   if (error) {
     console.error('Failed to delete airdrop claim:', error);
-    return { success: false, error: error.message };
   }
 
   revalidatePath('/hq-secure-88/airdrop');
-  return { success: true };
 }
 
-export async function updateSiteSetting(key: string, value: string) {
+export async function updateSiteSetting(key: string, value: string): Promise<void> {
   const { error } = await supabaseAdmin
     .from('site_settings')
     .update({ value })
@@ -64,15 +58,13 @@ export async function updateSiteSetting(key: string, value: string) {
 
   if (error) {
     console.error('Failed to update site setting:', error);
-    return { success: false, error: error.message };
   }
 
   revalidatePath('/hq-secure-88/settings');
   revalidatePath('/hq-secure-88');
-  return { success: true };
 }
 
-export async function updateMultipleSiteSettings(updates: { key: string; value: string }[]) {
+export async function updateMultipleSiteSettings(updates: { key: string; value: string }[]): Promise<{ success: boolean; error?: string }> {
   const { error } = await supabaseAdmin
     .from('site_settings')
     .upsert(updates);
