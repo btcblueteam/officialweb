@@ -55,6 +55,23 @@ main, section, .overflow-hidden {
   .font-mono {
     word-break: break-all;
   }
+
+  /* CRITICAL: Disable heavy blur effects on mobile for 60fps scrolling */
+  [class*="blur-[1"] {
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 0.15;
+  }
+
+  /* Reduce animation complexity on mobile */
+  .animate-pulse {
+    animation-duration: 4s;
+  }
+
+  /* Disable spinning animation on mobile */
+  [class*="animate-[spin"] {
+    animation: none !important;
+  }
 }
 
 /* Scrollbar styling */

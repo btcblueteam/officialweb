@@ -166,7 +166,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="flex-1 relative w-full max-w-xs sm:max-w-sm lg:max-w-lg mx-auto flex items-center justify-center aspect-square">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF]/20 to-[#00E5FF]/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF]/15 to-[#00E5FF]/15 rounded-full blur-2xl"></div>
           <div className="relative w-64 h-64 border-[0.5px] border-[#0066FF]/30 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
             <div className="absolute w-full h-full border-[0.5px] border-[#00E5FF]/20 rounded-full rotate-45 scale-110"></div>
             <div className="absolute w-full h-full border-[0.5px] border-[#0066FF]/40 rounded-full -rotate-45 scale-90"></div>

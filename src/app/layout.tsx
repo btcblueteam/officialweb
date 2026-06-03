@@ -26,10 +26,11 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased selection:bg-[#0066FF] selection:text-white overflow-x-hidden relative min-h-screen bg-[#070A11] text-[#E2E8F0]">
-        {/* Ambient Glows */}
+        {/* Lightweight ambient background — no GPU blur */}
         <div className="fixed inset-0 bg-mesh z-0 pointer-events-none opacity-40"></div>
-        <div className="fixed top-[-20%] left-[-10%] w-[800px] h-[800px] bg-[#0066FF]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-        <div className="fixed bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+        <div className="fixed inset-0 pointer-events-none z-0" style={{
+          background: 'radial-gradient(ellipse 60% 50% at 10% 20%, rgba(0,102,255,0.08) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 90% 80%, rgba(0,229,255,0.04) 0%, transparent 70%)'
+        }}></div>
         
         <Providers>
           <Suspense fallback={null}>
