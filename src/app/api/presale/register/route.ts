@@ -84,7 +84,7 @@ export async function POST(req: Request) {
                       <a href="https://t.me/btcblueofficial" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 600;">Telegram</a>
                     </td>
                     <td style="padding: 0 10px;">
-                      <a href="https://github.com/btcblueofficial" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 600;">Github</a>
+                      <a href="https://github.com/btcblueteam" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 600;">Github</a>
                     </td>
                   </tr>
                 </table>

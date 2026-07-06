@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Bot, Terminal, Shield, Cpu, Network, Zap } from 'lucide-react';
+import { ArrowLeft, Bot, Terminal, Shield, Cpu, Sparkles, Bell, CheckCircle2, ArrowRight, Layers, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeUp = {
@@ -16,109 +16,152 @@ const staggerContainer = {
 };
 
 export default function EcosystemPage() {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  return (
-    <main className="relative z-10 w-full min-h-screen pt-24 pb-20 px-6 lg:px-8">
-      {/* Background Glows */}
-      <div className="fixed top-0 left-1/4 w-[500px] h-[500px] bg-[#0066FF]/10 blur-[150px] rounded-full pointer-events-none"></div>
-      <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none"></div>
+  const handleNotify = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 5000);
+      setEmail('');
+    }
+  };
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        <Link href="/" className="inline-flex items-center gap-2 text-[#8A93A6] hover:text-white transition-colors mb-12 font-medium">
-          <ArrowLeft size={18} />
+  return (
+    <main className="relative z-10 w-full min-h-screen pt-24 pb-20 px-6 lg:px-8 overflow-hidden flex flex-col justify-between">
+      {/* Background Ambient Glows */}
+      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#0066FF]/20 to-[#00E5FF]/10 blur-[160px] rounded-full pointer-events-none"></div>
+      <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-[#0066FF]/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+      <div className="max-w-5xl mx-auto w-full relative z-10 my-auto py-12">
+        <Link href="/" className="inline-flex items-center gap-2 text-[#8A93A6] hover:text-white transition-colors mb-12 font-medium group">
+          <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
           Back to Home
         </Link>
 
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#0066FF]/10 border border-[#0066FF]/20 text-[#00E5FF] text-xs font-semibold tracking-widest uppercase w-max mb-6">
-            <Cpu size={14} />
-            The Infrastructure
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white font-[var(--font-space)] leading-tight mb-6">
-            Bitcoin Blue <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00E5FF]">Ecosystem</span>
-          </h1>
-          <p className="text-[#8A93A6] text-lg max-w-2xl mx-auto leading-relaxed">
-            A comprehensive suite of decentralized applications and AI-driven community tools designed to operate with zero friction. Explore the upcoming phases of our technological deployment.
-          </p>
+        {/* Hero Coming Soon Section */}
+        <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0066FF]/10 border border-[#0066FF]/30 text-[#00E5FF] text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_20px_rgba(0,102,255,0.2)]">
+            <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-ping"></span>
+            Ecosystem 2.0 • Under Development
+          </motion.div>
+
+          <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl md:text-7xl font-bold text-white font-[var(--font-space)] leading-[1.1] tracking-tight mb-6">
+            The Future of Web3 AI is <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-[#00A3FF] to-[#00E5FF]">
+              Arriving Soon.
+            </span>
+          </motion.h1>
+
+          <motion.p variants={fadeUp} className="text-[#8A93A6] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10 font-[var(--font-inter)]">
+            We are actively engineering a revolutionary zero-install ecosystem powered by deep learning models and institutional-grade smart contracts.
+          </motion.p>
+
+          {/* Notification Form */}
+          <motion.div variants={fadeUp} className="max-w-md mx-auto mb-16">
+            {submitted ? (
+              <div className="glass-panel p-4 rounded-2xl border border-[#00ff88]/40 bg-[#00ff88]/10 text-[#00ff88] flex items-center justify-center gap-3 font-semibold text-sm animate-fade-in">
+                <CheckCircle2 size={20} />
+                You&apos;re on the VIP priority list! We&apos;ll notify you at launch.
+              </div>
+            ) : (
+              <form onSubmit={handleNotify} className="flex flex-col sm:flex-row gap-3">
+                <div className="relative flex-1">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email for early access..."
+                    className="w-full px-5 py-4 rounded-xl bg-[#0F1423]/80 border border-white/10 text-white placeholder-[#8A93A6] text-sm focus:outline-none focus:border-[#0066FF] transition-colors"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#0066FF] to-[#00A3FF] hover:from-[#0052CC] hover:to-[#008AE6] text-white font-bold text-sm tracking-wide transition-all shadow-[0_0_25px_rgba(0,102,255,0.3)] hover:shadow-[0_0_35px_rgba(0,102,255,0.5)] flex items-center justify-center gap-2 shrink-0"
+                >
+                  <Bell size={16} /> Notify Me
+                </button>
+              </form>
+            )}
+          </motion.div>
         </motion.div>
 
-        <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="space-y-12">
+        {/* Development Progress Grid */}
+        <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Pillar 1 */}
-          <motion.div variants={fadeUp} className="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#0066FF]/5 blur-[60px] rounded-full pointer-events-none"></div>
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-16 h-16 rounded-2xl bg-[#0F1423] border border-white/10 flex items-center justify-center shrink-0 text-[#00E5FF] shadow-[0_0_20px_rgba(0,229,255,0.1)]">
-                <Bot size={32} />
+          {/* Module 1 */}
+          <motion.div variants={fadeUp} className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#00ff88]/5 blur-[40px] rounded-full"></div>
+            <div className="flex justify-between items-start mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-[#00ff88]/10 border border-[#00ff88]/20 flex items-center justify-center text-[#00ff88]">
+                <Shield size={24} />
               </div>
-              <div>
-                <h2 className="text-2xl font-bold text-white font-[var(--font-space)] mb-3">AI Community Bots (Phase 4)</h2>
-                <p className="text-[#8A93A6] leading-relaxed mb-6">
-                  Traditional crypto communities rely on manual moderation. We are building custom Telegram and Discord bots powered by deep learning models to automate sentiment analysis, filter malicious links instantly, and dynamically reward active members through targeted airdrops without human intervention.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2 text-sm text-white bg-white/5 p-3 rounded-xl border border-white/5">
-                    <Zap size={16} className="text-[#00ff88]" /> Automated Moderation
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-white bg-white/5 p-3 rounded-xl border border-white/5">
-                    <Network size={16} className="text-[#00ff88]" /> Smart Airdrop Targeting
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-1 rounded bg-[#00ff88]/10 text-[#00ff88] text-[10px] font-bold uppercase tracking-widest">
+                100% Live
+              </span>
+            </div>
+            <h3 className="text-xl font-bold text-white font-[var(--font-space)] mb-2">Core Smart Contracts</h3>
+            <p className="text-[#8A93A6] text-sm leading-relaxed mb-6">
+              Institutional-grade tokenomics, auto-buyback algorithms, and anti-MEV barriers deployed and verified on BSC.
+            </p>
+            <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+              <div className="bg-[#00ff88] h-full width-[100%] shadow-[0_0_10px_#00ff88]"></div>
             </div>
           </motion.div>
 
-          {/* Pillar 2 */}
-          <motion.div variants={fadeUp} className="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00E5FF]/5 blur-[60px] rounded-full pointer-events-none"></div>
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-16 h-16 rounded-2xl bg-[#0F1423] border border-white/10 flex items-center justify-center shrink-0 text-[#0066FF] shadow-[0_0_20px_rgba(0,102,255,0.1)]">
-                <Terminal size={32} />
+          {/* Module 2 */}
+          <motion.div variants={fadeUp} className="glass-panel p-6 sm:p-8 rounded-3xl border border-[#0066FF]/30 relative overflow-hidden group shadow-[0_0_30px_rgba(0,102,255,0.1)]">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#0066FF]/10 blur-[40px] rounded-full"></div>
+            <div className="flex justify-between items-start mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-[#0066FF]/20 border border-[#0066FF]/40 flex items-center justify-center text-[#00E5FF]">
+                <Bot size={24} />
               </div>
-              <div>
-                <h2 className="text-2xl font-bold text-white font-[var(--font-space)] mb-3">Zero-Install dApps (Phase 3)</h2>
-                <p className="text-[#8A93A6] leading-relaxed mb-6">
-                  Investors should not need to download heavy applications or navigate complex interfaces to stake or claim tokens. Our Zero-Install architecture ensures that all Web3 interactions (Staking, Claiming, Voting) happen directly within this highly optimized Next.js frontend, bridging the gap between Web2 speed and Web3 security.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2 text-sm text-white bg-white/5 p-3 rounded-xl border border-white/5">
-                    <Zap size={16} className="text-[#00ff88]" /> Frictionless Staking
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-white bg-white/5 p-3 rounded-xl border border-white/5">
-                    <Network size={16} className="text-[#00ff88]" /> Cloud-Native Execution
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-1 rounded bg-[#0066FF]/20 text-[#00E5FF] text-[10px] font-bold uppercase tracking-widest animate-pulse">
+                In Progress (85%)
+              </span>
+            </div>
+            <h3 className="text-xl font-bold text-white font-[var(--font-space)] mb-2">AI Community Bots</h3>
+            <p className="text-[#8A93A6] text-sm leading-relaxed mb-6">
+              Deep learning models training for automated moderation, sentiment tracking, and dynamic community reward targeting.
+            </p>
+            <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+              <div className="bg-gradient-to-r from-[#0066FF] to-[#00E5FF] h-full w-[85%] shadow-[0_0_10px_#0066FF]"></div>
             </div>
           </motion.div>
 
-          {/* Pillar 3 */}
-          <motion.div variants={fadeUp} className="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00ff88]/5 blur-[60px] rounded-full pointer-events-none"></div>
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-16 h-16 rounded-2xl bg-[#0F1423] border border-white/10 flex items-center justify-center shrink-0 text-[#00ff88] shadow-[0_0_20px_rgba(0,255,136,0.1)]">
-                <Shield size={32} />
+          {/* Module 3 */}
+          <motion.div variants={fadeUp} className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#00E5FF]/5 blur-[40px] rounded-full"></div>
+            <div className="flex justify-between items-start mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#8A93A6]">
+                <Terminal size={24} />
               </div>
-              <div>
-                <h2 className="text-2xl font-bold text-white font-[var(--font-space)] mb-3">Institutional Security Layer (Live)</h2>
-                <p className="text-[#8A93A6] leading-relaxed mb-6">
-                  The foundation of the entire ecosystem is the Bitcoin Blue Smart Contract. It acts as an unhackable core, featuring automated Buyback & Burn algorithms that trigger during market sell-offs, and MEV-protection protocols to safeguard users from predatory front-running bots.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="flex items-center gap-2 text-sm text-white bg-white/5 p-3 rounded-xl border border-white/5">
-                    <Zap size={16} className="text-[#00E5FF]" /> Auto-Buyback Engine
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-white bg-white/5 p-3 rounded-xl border border-white/5">
-                    <Network size={16} className="text-[#00E5FF]" /> Anti-MEV Protocols
-                  </div>
-                </div>
-              </div>
+              <span className="px-2.5 py-1 rounded bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest">
+                Upcoming Phase
+              </span>
+            </div>
+            <h3 className="text-xl font-bold text-white font-[var(--font-space)] mb-2">Zero-Install Staking</h3>
+            <p className="text-[#8A93A6] text-sm leading-relaxed mb-6">
+              Cloud-native staking vaults allowing instant reward compounding directly via the web terminal without downloads.
+            </p>
+            <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+              <div className="bg-[#8A93A6] h-full w-[25%]"></div>
             </div>
           </motion.div>
 
+        </motion.div>
+
+        {/* Bottom Call to Action */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-16 text-center">
+          <Link href="/presale" className="inline-flex items-center gap-2 text-sm font-semibold text-[#00E5FF] hover:text-white transition-colors">
+            Explore Institutional Presale Terminal <ArrowRight size={16} />
+          </Link>
         </motion.div>
       </div>
     </main>

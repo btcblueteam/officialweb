@@ -75,25 +75,7 @@ export default function PortalPage() {
             </Link>
           </motion.div>
 
-          {/* 2. Viral Airdrop */}
-          <motion.div variants={fadeUp} className="group relative">
-            <Link href="/airdrop" className="block w-full h-full glass-panel p-6 rounded-3xl border border-[#00d2ff]/30 hover:border-[#00d2ff]/60 hover:shadow-[0_0_30px_rgba(0,210,255,0.15)] transition-all duration-300">
-              <div className="absolute top-6 right-6 px-2.5 py-1 bg-[#00d2ff]/10 text-[#00d2ff] text-[10px] font-bold uppercase tracking-widest rounded flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00d2ff] animate-pulse"></span>
-                Halving Live
-              </div>
-              <div className="w-14 h-14 rounded-2xl bg-[#00d2ff]/20 border border-white/10 flex items-center justify-center mb-6 text-[#00d2ff] group-hover:scale-110 transition-transform duration-300">
-                <Sparkles size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-white font-[var(--font-space)] mb-2">Genesis Airdrop</h3>
-              <p className="text-[#8A93A6] text-sm mb-6 min-h-[60px]">
-                Claim your free $BTCBLUE allocation. Verify via Email OTP and earn up to 2 tiers of referral bonuses before the Halving.
-              </p>
-              <div className="flex items-center text-[#00d2ff] text-sm font-bold uppercase tracking-wider group-hover:gap-3 transition-all">
-                Claim Now <ChevronRight size={16} />
-              </div>
-            </Link>
-          </motion.div>
+
 
           {/* LOCKED / UPCOMING APPLICATIONS */}
 

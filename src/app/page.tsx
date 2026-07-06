@@ -25,7 +25,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [copied, setCopied] = useState(false);
   // Contract Address
-  const contractAddress = "0x1a7d99E07DaecD6A325e312e865f821C6D08d064"; // Official Token Address
+  const contractAddress = "0x4b36be83351a9f05b13764d9e58bc21863999aa4"; // Official Token Address
 
   const handleCopy = () => {
     navigator.clipboard.writeText(contractAddress);
@@ -53,11 +53,9 @@ export default function Home() {
           <nav className="hidden md:flex items-center gap-8">
             {[
               { name: 'Ecosystem', path: '/ecosystem' },
-              { name: 'Partners', path: '/partners' },
               { name: 'Tokenomics', path: '/#tokenomics' },
               { name: 'Security', path: '/security' },
               { name: 'Roadmap', path: '/roadmap' },
-              { name: 'Airdrop', path: '/airdrop' },
               { name: 'Docs', path: '/docs' }
             ].map((item) => (
               <Link key={item.name} href={item.path} className="text-sm font-medium text-[#8A93A6] hover:text-white transition-colors tracking-wide">
@@ -84,7 +82,6 @@ export default function Home() {
               <div className="flex flex-col px-6 py-4 gap-4">
                 {[
                   { name: 'Ecosystem', path: '/ecosystem' },
-                  { name: 'Partners', path: '/partners' },
                   { name: 'Tokenomics', path: '/#tokenomics' },
                   { name: 'Security', path: '/security' },
                   { name: 'Roadmap', path: '/roadmap' },
@@ -155,12 +152,9 @@ export default function Home() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mt-2">
-            <Link href="/presale" className="px-8 py-4 rounded-xl bg-white text-black font-bold text-sm tracking-widest uppercase hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
-              Join Presale
-              <ArrowRight size={16} />
-            </Link>
-            <Link href="/whitepaper" className="px-8 py-4 rounded-xl glass-panel text-white font-bold text-sm tracking-widest uppercase hover:bg-white/[0.1] transition-colors text-center">
+            <Link href="/whitepaper" className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#0066FF] to-[#00A3FF] hover:from-[#0052CC] hover:to-[#008AE6] text-white font-bold text-sm tracking-widest uppercase shadow-[0_0_25px_rgba(0,102,255,0.3)] hover:shadow-[0_0_35px_rgba(0,102,255,0.5)] transition-all flex items-center justify-center gap-2">
               Read Whitepaper
+              <ArrowRight size={16} />
             </Link>
           </motion.div>
         </motion.div>
@@ -287,31 +281,7 @@ export default function Home() {
       </section>
 
 
-      {/* --- AIRDROP BANNER --- */}
-      <section className="relative py-24 max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="p-[1px] rounded-3xl bg-gradient-to-r from-[#00d2ff]/40 via-white/10 to-[#0066FF]/40 shadow-[0_0_30px_rgba(0,210,255,0.15)] relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00d2ff]/5 to-[#0066FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-          
-          <div className="glass-panel bg-[#070A11]/90 rounded-3xl p-8 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-10 border-none relative z-10">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#00d2ff]/10 border border-[#00d2ff]/20 text-[#00d2ff] font-bold text-xs uppercase tracking-widest mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00d2ff] animate-pulse"></span>
-                Halving Epoch 1 Live
-              </div>
-              <h2 className="text-3xl lg:text-5xl font-bold text-white font-[var(--font-space)] mb-4">Genesis Airdrop</h2>
-              <p className="text-[#8A93A6] max-w-lg leading-relaxed">
-                Secure your fraction of the 2.1M total supply before the next halving epoch. Join the Whale Leaderboard and guarantee your Whitelist spot.
-              </p>
-            </div>
-            
-            <div className="w-full md:w-auto shrink-0">
-              <Link href="/airdrop" className="w-full md:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#00d2ff] to-[#0066FF] text-[#070a13] font-bold tracking-wide uppercase hover:shadow-[0_0_25px_rgba(0,210,255,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
-                Access Claim Terminal <ArrowRight size={18} />
-              </Link>
-            </div>
-          </div>
-        </motion.div>
-      </section>
+
 
       {/* --- ROADMAP BANNER --- */}
       <section className="relative py-24 max-w-7xl mx-auto px-6 lg:px-8 border-y border-white/[0.05] bg-[#0F1423]/30">
@@ -341,7 +311,7 @@ export default function Home() {
             {[
               { name: 'X (Twitter)', url: 'https://x.com/btcblueofficial' },
               { name: 'Telegram', url: 'https://t.me/btcblueofficial' },
-              { name: 'Github', url: 'https://github.com/btcblueofficial' },
+              { name: 'Github', url: 'https://github.com/btcblueteam' },
               { name: 'Docs', url: '/docs' }
             ].map(link => (
               <a key={link.name} href={link.url} target={link.url.startsWith('http') ? "_blank" : "_self"} rel="noreferrer" className="text-sm font-medium text-[#8A93A6] hover:text-[#00E5FF] transition-colors">

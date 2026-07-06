@@ -26,7 +26,6 @@ export default function RoadmapPage() {
       status: "completed",
       icon: <Shield size={24} />,
       title: "Protocol Architecture & Security",
-      date: "Q1 2026",
       items: [
         "Smart Contract Development (Hardcapped, Anti-MEV)",
         "Comprehensive Security Audit & Formal Verification",
@@ -40,7 +39,6 @@ export default function RoadmapPage() {
       status: "active",
       icon: <Rocket size={24} />,
       title: "Genesis Distribution & Liquidity",
-      date: "Q2 2026",
       items: [
         "Institutional Presale Launch (Tiered Allocation)",
         "Early Supporter Airdrop Distribution",
@@ -54,7 +52,6 @@ export default function RoadmapPage() {
       status: "upcoming",
       icon: <LineChart size={24} />,
       title: "Market Penetration & Staking",
-      date: "Q3 2026",
       items: [
         "CoinMarketCap & CoinGecko Fast-Track Listings",
         "CEX Tier-2 Exchange Listings",
@@ -68,7 +65,6 @@ export default function RoadmapPage() {
       status: "upcoming",
       icon: <Cpu size={24} />,
       title: "Ecosystem Integration & AI",
-      date: "Q4 2026",
       items: [
         "AI Telegram/Discord Bots Beta Release",
         "Zero-Install Ecosystem Fully Live",
@@ -140,9 +136,6 @@ export default function RoadmapPage() {
                     <div className="flex items-center justify-between mb-4">
                       <span className={`text-xs font-bold uppercase tracking-widest ${isCompleted ? 'text-[#00ff88]' : isActive ? 'text-[#00E5FF]' : 'text-[#8A93A6]'}`}>
                         {phase.phase}
-                      </span>
-                      <span className="text-[#8A93A6] text-sm font-mono bg-[#0F1423] px-3 py-1 rounded-full border border-white/5">
-                        {phase.date}
                       </span>
                     </div>
                     
