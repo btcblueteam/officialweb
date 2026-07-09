@@ -157,12 +157,6 @@ export default function EcosystemPage() {
 
         </motion.div>
 
-        {/* Bottom Call to Action */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="mt-16 text-center">
-          <Link href="/presale" className="inline-flex items-center gap-2 text-sm font-semibold text-[#00E5FF] hover:text-white transition-colors">
-            Explore Institutional Presale Terminal <ArrowRight size={16} />
-          </Link>
-        </motion.div>
       </div>
     </main>
   );
