@@ -25,7 +25,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [copied, setCopied] = useState(false);
   // Contract Address
-  const contractAddress = "0x4b36be83351a9f05b13764d9e58bc21863999aa4"; // Official Token Address
+  const contractAddress = "0x7cECf77E2b5582dED906f161697f464504Ea3295"; // Official Token Address
 
   const handleCopy = () => {
     navigator.clipboard.writeText(contractAddress);

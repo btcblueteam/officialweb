@@ -29,7 +29,7 @@ export const AIRDROP_ABI = [
 
 // Fallback to local hardhat addresses if env vars are missing
 export const CONTRACT_ADDRESSES = {
-  TOKEN: process.env.NEXT_PUBLIC_TOKEN_ADDRESS || "0x4b36be83351a9f05b13764d9e58bc21863999aa4",
+  TOKEN: process.env.NEXT_PUBLIC_TOKEN_ADDRESS || "0x7cECf77E2b5582dED906f161697f464504Ea3295",
   PRESALE: process.env.NEXT_PUBLIC_PRESALE_ADDRESS || "0xaacd81c14cc094b007bed59fe999158b46d6c57a",
   AIRDROP: process.env.NEXT_PUBLIC_AIRDROP_ADDRESS || "0x9882a63545864167c4d83dab266d6f1e1075fc55"
 };
