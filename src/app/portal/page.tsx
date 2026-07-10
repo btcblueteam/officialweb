@@ -57,7 +57,7 @@ export default function PortalPage() {
           
           {/* 1. Presale Terminal */}
           <motion.div variants={fadeUp} className="group relative">
-            <Link href="/presale" className="block w-full h-full glass-panel p-6 rounded-3xl border border-[#00E5FF]/30 hover:border-[#00E5FF]/60 hover:shadow-[0_0_30px_rgba(0,229,255,0.15)] transition-all duration-300">
+            <Link href="/presale-live" className="block w-full h-full glass-panel p-6 rounded-3xl border border-[#00E5FF]/30 hover:border-[#00E5FF]/60 hover:shadow-[0_0_30px_rgba(0,229,255,0.15)] transition-all duration-300">
               <div className="absolute top-6 right-6 px-2.5 py-1 bg-[#00ff88]/10 text-[#00ff88] text-[10px] font-bold uppercase tracking-widest rounded flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-pulse"></span>
                 Active
