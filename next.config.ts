@@ -1,6 +1,12 @@
+import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Set explicit workspace root for Turbopack to prevent SST cache errors
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
+
   // Enable React strict mode for better development practices
   reactStrictMode: true,
 

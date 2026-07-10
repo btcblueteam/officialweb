@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Bot, Terminal, Shield, Cpu, Sparkles, Bell, CheckCircle2, ArrowRight, Layers, Zap } from 'lucide-react';
+import { ArrowLeft, Bot, Terminal, Shield, Bell, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeUp = {
@@ -48,7 +48,7 @@ export default function EcosystemPage() {
         <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="text-center max-w-3xl mx-auto mb-16">
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0066FF]/10 border border-[#0066FF]/30 text-[#00E5FF] text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_20px_rgba(0,102,255,0.2)]">
             <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-ping"></span>
-            Ecosystem 2.0 • Under Development
+            Ecosystem 1.0 • Under Development
           </motion.div>
 
           <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl md:text-7xl font-bold text-white font-[var(--font-space)] leading-[1.1] tracking-tight mb-6">

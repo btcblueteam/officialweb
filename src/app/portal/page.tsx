@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Rocket, ShieldCheck, Lock, Activity, Bot, LineChart, Users, ChevronRight, Sparkles } from 'lucide-react';
+import { ArrowLeft, Lock, Activity, LineChart, Users, Sparkles, Rocket, Gift, Share2, LayoutGrid } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeUp = {
@@ -53,33 +53,87 @@ export default function PortalPage() {
 
         <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          {/* ACTIVE APPLICATIONS */}
-          
-          {/* 1. Presale Terminal */}
+          {/* 1. Genesis Airdrop (Locked) */}
           <motion.div variants={fadeUp} className="group relative">
-            <Link href="/presale-live" className="block w-full h-full glass-panel p-6 rounded-3xl border border-[#00E5FF]/30 hover:border-[#00E5FF]/60 hover:shadow-[0_0_30px_rgba(0,229,255,0.15)] transition-all duration-300">
-              <div className="absolute top-6 right-6 px-2.5 py-1 bg-[#00ff88]/10 text-[#00ff88] text-[10px] font-bold uppercase tracking-widest rounded flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-pulse"></span>
-                Active
+            <div className="block w-full h-full glass-panel p-6 rounded-3xl border border-white/5 bg-[#070A11]/60 cursor-not-allowed">
+              <div className="absolute top-6 right-6 px-2.5 py-1 bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1.5">
+                <Lock size={10} />
+                Locked
               </div>
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0066FF]/20 to-[#00E5FF]/20 border border-white/10 flex items-center justify-center mb-6 text-[#00E5FF] group-hover:scale-110 transition-transform duration-300">
-                <Rocket size={24} />
+              <div className="w-14 h-14 rounded-2xl bg-[#0F1423] border border-white/5 flex items-center justify-center mb-6 text-[#8A93A6]">
+                <Gift size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white font-[var(--font-space)] mb-2">Institutional Presale</h3>
-              <p className="text-[#8A93A6] text-sm mb-6 min-h-[60px]">
-                Secure your genesis allocation of BTCBLUE before DEX listing. Tiered contribution mechanics enabled.
+              <h3 className="text-xl font-bold text-[#8A93A6] font-[var(--font-space)] mb-2">Genesis Airdrop</h3>
+              <p className="text-[#475569] text-sm mb-6 min-h-[60px]">
+                Claim token rewards for early ecosystem participants, community supporters, and active testnet contributors.
               </p>
-              <div className="flex items-center text-[#00E5FF] text-sm font-bold uppercase tracking-wider group-hover:gap-3 transition-all">
-                Enter Terminal <ChevronRight size={16} />
+              <div className="flex items-center text-[#475569] text-xs font-bold uppercase tracking-wider gap-2">
+                <Sparkles size={14} /> Upcoming Distribution
               </div>
-            </Link>
+            </div>
           </motion.div>
 
+          {/* 2. Marketer Partnerships (Locked) */}
+          <motion.div variants={fadeUp} className="group relative">
+            <div className="block w-full h-full glass-panel p-6 rounded-3xl border border-white/5 bg-[#070A11]/60 cursor-not-allowed">
+              <div className="absolute top-6 right-6 px-2.5 py-1 bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1.5">
+                <Lock size={10} />
+                Locked
+              </div>
+              <div className="w-14 h-14 rounded-2xl bg-[#0F1423] border border-white/5 flex items-center justify-center mb-6 text-[#8A93A6]">
+                <Share2 size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#8A93A6] font-[var(--font-space)] mb-2">Marketer Partnerships</h3>
+              <p className="text-[#475569] text-sm mb-6 min-h-[60px]">
+                Decentralized affiliate portal offering multi-tier referral rewards and promotional bounty programs for growth leaders.
+              </p>
+              <div className="flex items-center text-[#475569] text-xs font-bold uppercase tracking-wider gap-2">
+                <Sparkles size={14} /> Partner Application Portal
+              </div>
+            </div>
+          </motion.div>
 
+          {/* 3. Institutional Presale (Locked) */}
+          <motion.div variants={fadeUp} className="group relative">
+            <div className="block w-full h-full glass-panel p-6 rounded-3xl border border-white/5 bg-[#070A11]/60 cursor-not-allowed">
+              <div className="absolute top-6 right-6 px-2.5 py-1 bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1.5">
+                <Lock size={10} />
+                Locked
+              </div>
+              <div className="w-14 h-14 rounded-2xl bg-[#0F1423] border border-white/5 flex items-center justify-center mb-6 text-[#8A93A6]">
+                <Rocket size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#8A93A6] font-[var(--font-space)] mb-2">Institutional Presale</h3>
+              <p className="text-[#475569] text-sm mb-6 min-h-[60px]">
+                Secure your genesis allocation of BTCBLUE before DEX listing. Tiered contribution mechanics and vesting vaults.
+              </p>
+              <div className="flex items-center text-[#475569] text-xs font-bold uppercase tracking-wider gap-2">
+                <Sparkles size={14} /> Available at Launch
+              </div>
+            </div>
+          </motion.div>
 
-          {/* LOCKED / UPCOMING APPLICATIONS */}
+          {/* 4. SaaS AI Ecosystem Modules (Locked) */}
+          <motion.div variants={fadeUp} className="group relative">
+            <div className="block w-full h-full glass-panel p-6 rounded-3xl border border-white/5 bg-[#070A11]/60 cursor-not-allowed">
+              <div className="absolute top-6 right-6 px-2.5 py-1 bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1.5">
+                <Lock size={10} />
+                Locked
+              </div>
+              <div className="w-14 h-14 rounded-2xl bg-[#0F1423] border border-white/5 flex items-center justify-center mb-6 text-[#8A93A6]">
+                <LayoutGrid size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#8A93A6] font-[var(--font-space)] mb-2">SaaS AI Ecosystem</h3>
+              <p className="text-[#475569] text-sm mb-6 min-h-[60px]">
+                Expandable Web3 Software-as-a-Service suite including institutional analytics, wallet scoring, and automated compliance tools.
+              </p>
+              <div className="flex items-center text-[#475569] text-xs font-bold uppercase tracking-wider gap-2">
+                <Sparkles size={14} /> In Development
+              </div>
+            </div>
+          </motion.div>
 
-          {/* 3. Staking Vaults */}
+          {/* 5. Staking Vaults (Locked) */}
           <motion.div variants={fadeUp} className="group relative">
             <div className="block w-full h-full glass-panel p-6 rounded-3xl border border-white/5 bg-[#070A11]/60 cursor-not-allowed">
               <div className="absolute top-6 right-6 px-2.5 py-1 bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1.5">
@@ -91,7 +145,7 @@ export default function PortalPage() {
               </div>
               <h3 className="text-xl font-bold text-[#8A93A6] font-[var(--font-space)] mb-2">Zero-Install Staking</h3>
               <p className="text-[#475569] text-sm mb-6 min-h-[60px]">
-                Lock BTCBLUE to earn passive yields. Highly secure auto-compounding vaults.
+                Lock BTCBLUE to earn passive yields. Highly secure auto-compounding vaults operating directly in the cloud.
               </p>
               <div className="flex items-center text-[#475569] text-xs font-bold uppercase tracking-wider gap-2">
                 <Sparkles size={14} /> Available Post-Presale
@@ -99,27 +153,7 @@ export default function PortalPage() {
             </div>
           </motion.div>
 
-          {/* 4. AI Trading Bots */}
-          <motion.div variants={fadeUp} className="group relative">
-            <div className="block w-full h-full glass-panel p-6 rounded-3xl border border-white/5 bg-[#070A11]/60 cursor-not-allowed">
-              <div className="absolute top-6 right-6 px-2.5 py-1 bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1.5">
-                <Lock size={10} />
-                Locked
-              </div>
-              <div className="w-14 h-14 rounded-2xl bg-[#0F1423] border border-white/5 flex items-center justify-center mb-6 text-[#8A93A6]">
-                <Bot size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-[#8A93A6] font-[var(--font-space)] mb-2">AI Trading Modules</h3>
-              <p className="text-[#475569] text-sm mb-6 min-h-[60px]">
-                Automated sentiment analysis and execution bots for Telegram and Discord ecosystems.
-              </p>
-              <div className="flex items-center text-[#475569] text-xs font-bold uppercase tracking-wider gap-2">
-                <Sparkles size={14} /> Available Post-Presale
-              </div>
-            </div>
-          </motion.div>
-
-          {/* 5. Governance DAO */}
+          {/* 6. Governance DAO (Locked) */}
           <motion.div variants={fadeUp} className="group relative">
             <div className="block w-full h-full glass-panel p-6 rounded-3xl border border-white/5 bg-[#070A11]/60 cursor-not-allowed">
               <div className="absolute top-6 right-6 px-2.5 py-1 bg-white/5 text-[#8A93A6] text-[10px] font-bold uppercase tracking-widest rounded border border-white/10 flex items-center gap-1.5">
@@ -131,7 +165,7 @@ export default function PortalPage() {
               </div>
               <h3 className="text-xl font-bold text-[#8A93A6] font-[var(--font-space)] mb-2">Community DAO</h3>
               <p className="text-[#475569] text-sm mb-6 min-h-[60px]">
-                Propose and vote on protocol upgrades, treasury allocations, and future integrations.
+                Propose and vote on protocol upgrades, treasury allocations, and future token utility integrations.
               </p>
               <div className="flex items-center text-[#475569] text-xs font-bold uppercase tracking-wider gap-2">
                 <Sparkles size={14} /> Phase 4 Deployment
